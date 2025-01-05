@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://bx471ssbkvpae"]
+[gd_scene load_steps=11 format=3 uid="uid://bx471ssbkvpae"]
 
 [ext_resource type="Texture2D" uid="uid://cav1kmkigq7y6" path="res://assets/player/player.png" id="1_fthlg"]
+[ext_resource type="Script" path="res://scenes/player/player.gd" id="1_ybq8a"]
 
 [sub_resource type="Animation" id="Animation_8mron"]
 resource_name = "hurt"
@@ -115,10 +116,14 @@ _data = {
 "run": SubResource("Animation_0j7v1")
 }
 
-[node name="Player" type="CharacterBody2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8rnjg"]
+size = Vector2(10, 18)
+
+[node name="Player" type="CharacterBody2D" groups=["Moveables"]]
+collision_layer = 0
+script = ExtResource("1_ybq8a")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(1, 4)
 texture = ExtResource("1_fthlg")
 hframes = 19
 
@@ -127,3 +132,7 @@ libraries = {
 "": SubResource("AnimationLibrary_rtfb3")
 }
 autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_8rnjg")
