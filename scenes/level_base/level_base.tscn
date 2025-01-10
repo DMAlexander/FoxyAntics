@@ -209,10 +209,10 @@ tile_map_data = PackedByteArray("AAAeAAkAAAAHAAEAAAAdAAkAAAAHAAEAAAAcAAkAAAAHAAE
 tile_set = SubResource("TileSet_fb5kx")
 
 [node name="Player" parent="." instance=ExtResource("2_njfuo")]
-position = Vector2(172, -291)
+position = Vector2(154, -41)
 
 [node name="BulletPlayer" parent="." instance=ExtResource("3_fgxap")]
-position = Vector2(140, -30)
+position = Vector2(59, -31)
 
 [node name="BulletEnemy" parent="." instance=ExtResource("4_t5v4v")]
-position = Vector2(112, -32)
+position = Vector2(106, -34)
