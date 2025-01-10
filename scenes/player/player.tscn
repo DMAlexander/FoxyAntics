@@ -140,3 +140,12 @@ position = Vector2(0, 6)
 shape = SubResource("RectangleShape2D_8rnjg")
 
 [node name="PlayerCam" parent="." instance=ExtResource("3_apo6u")]
+
+[node name="DebugLabel" type="Label" parent="."]
+offset_left = -20.0
+offset_top = -26.0
+offset_right = 304.0
+offset_bottom = 62.0
+scale = Vector2(0.128867, 0.159999)
+theme_override_font_sizes/font_size = 64
+text = "asdasdasd"
