@@ -1,7 +1,40 @@
-[gd_scene load_steps=11 format=3 uid="uid://bx471ssbkvpae"]
+[gd_scene load_steps=12 format=3 uid="uid://bx471ssbkvpae"]
 
 [ext_resource type="Texture2D" uid="uid://cav1kmkigq7y6" path="res://assets/player/player.png" id="1_fthlg"]
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_ybq8a"]
+[ext_resource type="PackedScene" uid="uid://bo0jk6fpax8pv" path="res://scenes/player_cam/player_cam.tscn" id="3_apo6u"]
+
+[sub_resource type="Animation" id="Animation_eiuof"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_8jx8p"]
+resource_name = "fall"
+length = 0.1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [18]
+}
 
 [sub_resource type="Animation" id="Animation_8mron"]
 resource_name = "hurt"
@@ -39,24 +72,6 @@ tracks/0/keys = {
 "values": [13, 14, 15, 16]
 }
 
-[sub_resource type="Animation" id="Animation_0j7v1"]
-resource_name = "run"
-length = 0.4
-loop_mode = 1
-step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3]
-}
-
 [sub_resource type="Animation" id="Animation_x3607"]
 resource_name = "jump"
 length = 0.1
@@ -74,9 +89,10 @@ tracks/0/keys = {
 "values": [17]
 }
 
-[sub_resource type="Animation" id="Animation_8jx8p"]
-resource_name = "fall"
-length = 0.1
+[sub_resource type="Animation" id="Animation_0j7v1"]
+resource_name = "run"
+length = 0.4
+loop_mode = 1
 step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -85,25 +101,10 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [18]
-}
-
-[sub_resource type="Animation" id="Animation_eiuof"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
+"values": [0, 1, 2, 3]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rtfb3"]
@@ -125,6 +126,7 @@ script = ExtResource("1_ybq8a")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_fthlg")
+flip_h = true
 hframes = 19
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -136,3 +138,5 @@ autoplay = "idle"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 6)
 shape = SubResource("RectangleShape2D_8rnjg")
+
+[node name="PlayerCam" parent="." instance=ExtResource("3_apo6u")]
