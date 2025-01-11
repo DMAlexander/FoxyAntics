@@ -242,3 +242,4 @@ position = Vector2(106, -34)
 
 [node name="Snail" parent="Enemies" instance=ExtResource("7_mi841")]
 position = Vector2(99, -27)
+speed = 50.0

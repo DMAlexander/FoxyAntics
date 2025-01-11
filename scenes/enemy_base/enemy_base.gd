@@ -16,6 +16,7 @@ var _dying: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	print("EB _ready")
 	_player_ref = get_tree().get_first_node_in_group(
 		Constants.PLAYER_GROUP
 	)
