@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://ckyut0aqgqsoe"]
+[gd_scene load_steps=10 format=4 uid="uid://ckyut0aqgqsoe"]
 
 [ext_resource type="Texture2D" uid="uid://dqbw6hvktoxlq" path="res://assets/tiles/Terrain (16x16).png" id="1_0oiai"]
 [ext_resource type="Script" path="res://scenes/level_base/level_base.gd" id="1_kcra8"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cf4uffux70cnp" path="res://scenes/bullet_base/bullet_player.tscn" id="3_fgxap"]
 [ext_resource type="PackedScene" uid="uid://fstcmefixjwb" path="res://scenes/bullet_base/bullet_enemy.tscn" id="4_t5v4v"]
 [ext_resource type="PackedScene" uid="uid://dulngtcwnf8xg" path="res://scenes/object_maker/object_maker.tscn" id="5_xxi4o"]
+[ext_resource type="PackedScene" uid="uid://cdfnl1ubd07yh" path="res://scenes/enemies/snail.tscn" id="7_mi841"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u4ttb"]
 texture = ExtResource("1_0oiai")
@@ -215,6 +216,7 @@ physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_u4ttb")
 
 [node name="LevelBase" type="Node2D"]
+position = Vector2(31, -1)
 script = ExtResource("1_kcra8")
 
 [node name="TileMapLayers" type="Node2D" parent="."]
@@ -227,9 +229,16 @@ tile_set = SubResource("TileSet_fb5kx")
 position = Vector2(154, -41)
 
 [node name="BulletPlayer" parent="." instance=ExtResource("3_fgxap")]
+visible = false
 position = Vector2(59, -31)
 
 [node name="BulletEnemy" parent="." instance=ExtResource("4_t5v4v")]
+visible = false
 position = Vector2(106, -34)
 
 [node name="ObjectMaker" parent="." instance=ExtResource("5_xxi4o")]
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Snail" parent="Enemies" instance=ExtResource("7_mi841")]
+position = Vector2(99, -27)
