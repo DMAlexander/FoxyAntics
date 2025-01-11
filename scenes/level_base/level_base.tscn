@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://ckyut0aqgqsoe"]
+[gd_scene load_steps=11 format=4 uid="uid://ckyut0aqgqsoe"]
 
 [ext_resource type="Texture2D" uid="uid://dqbw6hvktoxlq" path="res://assets/tiles/Terrain (16x16).png" id="1_0oiai"]
 [ext_resource type="Script" path="res://scenes/level_base/level_base.gd" id="1_kcra8"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://fstcmefixjwb" path="res://scenes/bullet_base/bullet_enemy.tscn" id="4_t5v4v"]
 [ext_resource type="PackedScene" uid="uid://dulngtcwnf8xg" path="res://scenes/object_maker/object_maker.tscn" id="5_xxi4o"]
 [ext_resource type="PackedScene" uid="uid://cdfnl1ubd07yh" path="res://scenes/enemies/snail.tscn" id="7_mi841"]
+[ext_resource type="PackedScene" uid="uid://dixr46ewq8f4h" path="res://scenes/enemies/frog.tscn" id="8_uyhqe"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u4ttb"]
 texture = ExtResource("1_0oiai")
@@ -242,4 +243,6 @@ position = Vector2(106, -34)
 
 [node name="Snail" parent="Enemies" instance=ExtResource("7_mi841")]
 position = Vector2(99, -27)
-speed = 50.0
+
+[node name="Frog" parent="Enemies" instance=ExtResource("8_uyhqe")]
+position = Vector2(26, -26)
