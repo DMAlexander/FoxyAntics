@@ -20,6 +20,7 @@ func _ready() -> void:
 	_player_ref = get_tree().get_first_node_in_group(
 		Constants.PLAYER_GROUP
 	)
+	print("_player_ref: ", _player_ref)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
