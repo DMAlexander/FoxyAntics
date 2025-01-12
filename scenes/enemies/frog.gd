@@ -4,6 +4,7 @@ extends EnemyBase
 @onready var jump_timer: Timer = $JumpTimer
 
 
+
 const JUMP_MIN_TIME: float = 2.0
 const JUMP_MAX_TIME: float = 4.0
 

@@ -147,6 +147,7 @@ shape = SubResource("RectangleShape2D_8rnjg")
 [node name="PlayerCam" parent="." instance=ExtResource("3_apo6u")]
 
 [node name="DebugLabel" type="Label" parent="."]
+visible = false
 offset_left = -20.0
 offset_top = -26.0
 offset_right = 304.0
@@ -156,9 +157,6 @@ theme_override_font_sizes/font_size = 64
 text = "asdasdasd"
 
 [node name="Shooter" parent="." instance=ExtResource("4_e6ap5")]
-speed = 300.0
-life_span = 3.0
-shoot_delay = 0.3
 
 [node name="HitBox" type="Area2D" parent="."]
 collision_layer = 2
